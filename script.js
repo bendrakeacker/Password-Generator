@@ -14,16 +14,6 @@ var yesSymbol = true;
 var yesUpper = true;
 var yesLower = true;
 
-// Write password to the #password input
-function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
-    passwordText.value = password;
-}
-
-//calling function
-generatePassword();
-
 //defining function
 
 function generatePassword() {
@@ -45,12 +35,12 @@ function generatePassword() {
         var yesLower = confirm("Would you like your password to inclide lowercase letters?")
           
         if (!yesNumber && !yesSymbol && !yesUpper && !yesLower) {
-            //this will be the alert
+            alert("I can't generate a password with characters dude")
             
         }else {
             
             var allchar = []
-            var allchar2 = []
+            
             //if user said yes, add array(s) to all characters array
             
             if(yesNumber) {               
@@ -81,6 +71,13 @@ function generatePassword() {
         return PWinitial
 
     }
+}
+// Write password to the #password input
+function writePassword() {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+    passwordText.value = password;
+    
 }
 
 // Add event listener to generate button
